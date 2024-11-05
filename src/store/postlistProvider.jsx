@@ -4,6 +4,7 @@ export const PostLists = createContext({
   postlist: [],
   addNewPost: () => {},
   deletePost: () => {},
+  FetchInitialPosts: () => {},
 });
 
 //this is a pure function for reducer
@@ -15,6 +16,8 @@ const postListReducer = (currPostList, action) => {
     );
   } else if (action.type === "ADD_NEW_POST") {
     newPostList = [action.payload, ...currPostList];
+  } else if (action.type === "FETCH_POSTS") {
+    newPostList = action.payload.posts;
   }
 
   return newPostList;
@@ -23,10 +26,7 @@ const postListReducer = (currPostList, action) => {
 //this is a component
 const PostListProvider = ({ children }) => {
   //this is reducer defined
-  const [postlist, dispatchPost] = useReducer(
-    postListReducer,
-    DEFAULT_POST_LIST
-  );
+  const [postlist, dispatchPost] = useReducer(postListReducer, []);
   //these are methods that include actions to be dispatched
   const addNewPost = (
     postUser,
@@ -48,6 +48,10 @@ const PostListProvider = ({ children }) => {
     });
   };
 
+  const FetchInitialPosts = (posts) => {
+    dispatchPost({ type: "FETCH_POSTS", payload: { posts } });
+  };
+
   const deletePost = (postId) => {
     dispatchPost({
       type: "DELETE_POST",
@@ -55,7 +59,9 @@ const PostListProvider = ({ children }) => {
     });
   };
   return (
-    <PostLists.Provider value={{ postlist, addNewPost, deletePost }}>
+    <PostLists.Provider
+      value={{ postlist, addNewPost, deletePost, FetchInitialPosts }}
+    >
       {children}
     </PostLists.Provider>
   );
