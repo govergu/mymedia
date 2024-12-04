@@ -1,10 +1,17 @@
 function Navigation_Bar() {
   return (
     <header
+
       classNameName="p-3 text-bg-dark"
       style={{ position: "sticky", top: 0, zIndex: 1 }}
     >
       <div classNameName="container" bis_skin_checked="1">
+
+      className="p-3 text-bg-dark"
+      style={{ position: "sticky", top: 0, zIndex: 1 }}
+    >
+      <div className="container" bis_skin_checked="1">
+
         <div
           classNameName="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
           bis_skin_checked="1"
