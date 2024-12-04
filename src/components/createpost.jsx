@@ -10,6 +10,21 @@ const CreatePost = () => {
   const postViews = useRef("");
 
   const AddNewPost = () => {
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: postUser,
+        title: postTitle,
+        body: postContent,
+        tags: postTags,
+        views: postViews,
+      }),
+    })
+      .then((res) => res.json())
+
+      .then(console.log);
+
     addNewPost(
       postUser.current.value,
       postTitle.current.value,
@@ -25,51 +40,55 @@ const CreatePost = () => {
   };
 
   return (
-    <form className="create-post">
-      <div className="mb-3">
-        <label htmlFor="userid" className="form-label">
+    <form classNameName="create-post">
+      <div classNameName="mb-3">
+        <label htmlFor="userid" classNameName="form-label">
           UserName
         </label>
-        <input type="text" className="form-control" ref={postUser} />
+        <input type="text" classNameName="form-control" ref={postUser} />
       </div>
-      <div className="mb-3">
-        <label htmlFor="Title" className="form-label">
+      <div classNameName="mb-3">
+        <label htmlFor="Title" classNameName="form-label">
           Title
         </label>
-        <input type="text" className="form-control" ref={postTitle} />
+        <input type="text" classNameName="form-control" ref={postTitle} />
       </div>
-      <div className="mb-3">
-        <label htmlFor="Body" className="form-label">
+      <div classNameName="mb-3">
+        <label htmlFor="Body" classNameName="form-label">
           Body
         </label>
         <textarea
           name=""
           id=""
-          className="form-control"
+          classNameName="form-control"
           placeholder="Enter your text"
           ref={postContent}
         ></textarea>
       </div>
-      <div className="mb-3">
+      <div classNameName="mb-3">
         <label htmlFor="tags">Tags</label>
         <input
           type="text"
           placeholder="Tags..."
-          className="form-control"
+          classNameName="form-control"
           ref={postTags}
         />
       </div>
-      <div className="mb-3">
+      <div classNameName="mb-3">
         <label htmlFor="views">Views</label>
         <input
           type="number"
           placeholder="Number of Views"
-          className="form-control"
+          classNameName="form-control"
           ref={postViews}
         />
       </div>
 
-      <button type="submit" className="btn btn-primary" onClick={AddNewPost}>
+      <button
+        type="submit"
+        classNameName="btn btn-primary"
+        onClick={AddNewPost}
+      >
         Create Post
       </button>
     </form>
