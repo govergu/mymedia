@@ -1,12 +1,13 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navigation_Bar from "./components/header";
-import Sidebar from "./components/sidebar";
-import Footer from "./components/footer";
-import PostList from "./components/postList";
-import CreatePost from "./components/createpost";
+import Navigation_Bar from "../components/header";
+import Sidebar from "../components/sidebar";
+import Footer from "../components/footer";
+import PostList from "../components/postList";
+import CreatePost from "../components/createpost";
 import { useState } from "react";
-import PostListProvider from "./store/postlistProvider";
+import PostListProvider from "../store/postlistProvider";
+import { Outlet } from "react-router-dom";
 
 function App() {
   //this state is defined to display either home section or create post section which is passed to sidebar as props
@@ -19,18 +20,14 @@ function App() {
     <>
       <PostListProvider>
         <Navigation_Bar />
-        <div className="contents">
+        <div classNameName="contents">
           <Sidebar
             activeSidebarItem={activeSidebarItem}
             selectItem={selectItem}
           ></Sidebar>
           <div>
-            {selectItem === "Home" ? (
-              <PostList></PostList>
-            ) : (
-              <CreatePost></CreatePost>
-            )}
-
+            {/* {selectItem === "Home" ? <PostList /> : <CreatePost />} */}
+            <Outlet />
             <Footer></Footer>
           </div>
         </div>
