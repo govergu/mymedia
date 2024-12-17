@@ -6,15 +6,24 @@ const Sidebar = () => {
       style={{ width: "280px" }}
       bis_skin_checked="1"
     >
+<<<<<<< HEAD
       <a
         href="/"
+=======
+      <Link
+        to="/"
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
         classNameName="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
       >
         <svg classNameName="bi pe-none me-2" width="40" height="32">
           <use xlinkHref="#bootstrap"></use>
         </svg>
         <span classNameName="fs-4">Sidebar</span>
+<<<<<<< HEAD
       </a>
+=======
+      </Link>
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
       <hr />
       <ul classNameName="nav nav-pills flex-column mb-auto">
         <li classNameName="nav-item">
@@ -27,7 +36,11 @@ const Sidebar = () => {
         </li>
 
         <li>
+<<<<<<< HEAD
           <Link to="/create-post" classNameName="nav-link text-white">
+=======
+          <Link to="/create-post" classNameName="nav-link text-white ">
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
             <svg classNameName="bi pe-none me-2" width="16" height="16">
               <use xlinkHref="#table"></use>
             </svg>

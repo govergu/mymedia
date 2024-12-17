@@ -1,10 +1,24 @@
 function Navigation_Bar() {
   return (
     <header
+<<<<<<< HEAD
       classNameName="p-3 text-bg-dark"
       style={{ position: "sticky", top: 0, zIndex: 1 }}
     >
       <div classNameName="container" bis_skin_checked="1">
+=======
+
+      classNameName="p-3 text-bg-dark"
+      style={{ position: "sticky", top: 0, zIndex: 1 }}
+    >
+      <div classNameName="container" bis_skin_checked="1">
+
+      className="p-3 text-bg-dark"
+      style={{ position: "sticky", top: 0, zIndex: 1 }}
+    >
+      <div className="container" bis_skin_checked="1">
+
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
         <div
           classNameName="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
           bis_skin_checked="1"

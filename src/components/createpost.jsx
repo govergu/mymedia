@@ -12,15 +12,19 @@ const CreatePost = () => {
   const navigate = useNavigate();
 
   const AddNewPost = () => {
+<<<<<<< HEAD
     const PostUser = postUser.current.value;
     const PostTitle = postTitle.current.value;
     const PostContent = postContent.current.value;
     const PostTags = postTags.current.value.split(" ");
     const PostViews = postViews.current.value;
+=======
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+<<<<<<< HEAD
         userId: PostUser,
         title: PostTitle,
         body: PostContent,
@@ -33,6 +37,26 @@ const CreatePost = () => {
         addNewPost(post), navigate("/");
       });
 
+=======
+        userId: postUser,
+        title: postTitle,
+        body: postContent,
+        tags: postTags,
+        views: postViews,
+      }),
+    })
+      .then((res) => res.json())
+
+      .then(console.log);
+
+    addNewPost(
+      postUser.current.value,
+      postTitle.current.value,
+      postContent.current.value,
+      postTags.current.value.split(" "),
+      postViews.current.value
+    );
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
     postUser.current.value = "";
     postTitle.current.value = "";
     postContent.current.value = "";
@@ -41,7 +65,11 @@ const CreatePost = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div classNameName="create-post">
+=======
+    <form classNameName="create-post">
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
       <div classNameName="mb-3">
         <label htmlFor="userid" classNameName="form-label">
           UserName
@@ -85,7 +113,15 @@ const CreatePost = () => {
         />
       </div>
 
+<<<<<<< HEAD
       <button classNameName="btn btn-primary" onClick={AddNewPost}>
+=======
+      <button
+        type="submit"
+        classNameName="btn btn-primary"
+        onClick={AddNewPost}
+      >
+>>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
         Create Post
       </button>
     </div>
