@@ -12,19 +12,15 @@ const CreatePost = () => {
   const navigate = useNavigate();
 
   const AddNewPost = () => {
-<<<<<<< HEAD
     const PostUser = postUser.current.value;
     const PostTitle = postTitle.current.value;
     const PostContent = postContent.current.value;
     const PostTags = postTags.current.value.split(" ");
     const PostViews = postViews.current.value;
-=======
->>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-<<<<<<< HEAD
         userId: PostUser,
         title: PostTitle,
         body: PostContent,
@@ -36,92 +32,54 @@ const CreatePost = () => {
       .then((post) => {
         addNewPost(post), navigate("/");
       });
-
-=======
-        userId: postUser,
-        title: postTitle,
-        body: postContent,
-        tags: postTags,
-        views: postViews,
-      }),
-    })
-      .then((res) => res.json())
-
-      .then(console.log);
-
-    addNewPost(
-      postUser.current.value,
-      postTitle.current.value,
-      postContent.current.value,
-      postTags.current.value.split(" "),
-      postViews.current.value
-    );
->>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
-    postUser.current.value = "";
-    postTitle.current.value = "";
-    postContent.current.value = "";
-    postTags.current.value = "";
-    postViews.current.value = "";
   };
 
   return (
-<<<<<<< HEAD
-    <div classNameName="create-post">
-=======
-    <form classNameName="create-post">
->>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
-      <div classNameName="mb-3">
-        <label htmlFor="userid" classNameName="form-label">
+    <div className="create-post">
+      <div className="mb-3">
+        <label htmlFor="userid" className="form-label">
           UserName
         </label>
-        <input type="text" classNameName="form-control" ref={postUser} />
+        <input type="number" className="form-control" ref={postUser} />
       </div>
-      <div classNameName="mb-3">
-        <label htmlFor="Title" classNameName="form-label">
+      <div className="mb-3">
+        <label htmlFor="Title" className="form-label">
           Title
         </label>
-        <input type="text" classNameName="form-control" ref={postTitle} />
+        <input type="text" className="form-control" ref={postTitle} />
       </div>
-      <div classNameName="mb-3">
-        <label htmlFor="Body" classNameName="form-label">
+      <div className="mb-3">
+        <label htmlFor="Body" className="form-label">
           Body
         </label>
         <textarea
           name=""
           id=""
-          classNameName="form-control"
+          className="form-control"
           placeholder="Enter your text"
           ref={postContent}
         ></textarea>
       </div>
-      <div classNameName="mb-3">
+      <div className="mb-3">
         <label htmlFor="tags">Tags</label>
         <input
           type="text"
           placeholder="Tags..."
-          classNameName="form-control"
+          className="form-control"
           ref={postTags}
         />
       </div>
-      <div classNameName="mb-3">
+      <div className="mb-3">
         <label htmlFor="views">Views</label>
         <input
           type="number"
           placeholder="Number of Views"
-          classNameName="form-control"
+          className="form-control"
           ref={postViews}
         />
       </div>
 
-<<<<<<< HEAD
-      <button classNameName="btn btn-primary" onClick={AddNewPost}>
-=======
-      <button
-        type="submit"
-        classNameName="btn btn-primary"
-        onClick={AddNewPost}
-      >
->>>>>>> 22bb3d41e230547d994785beb5754acab5d89151
+      <button className="btn btn-primary" onClick={AddNewPost}>
         Create Post
       </button>
     </div>

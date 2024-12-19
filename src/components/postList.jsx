@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Post from "./post";
 import { PostLists } from "../store/postlistProvider";
 import WelcomeMessage from "./welcome";
@@ -6,6 +6,7 @@ import Loading from "./loading";
 
 const PostList = () => {
   const { postlist, fetching } = useContext(PostLists);
+  console.log(postlist);
 
   return (
     <>
